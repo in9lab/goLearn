@@ -11,14 +11,12 @@ import (
 )
 
 func main() {
-	//Default返回一个默认的路由引擎
 	flag.Parse()
 	flag.Lookup("logtostderr").Value.Set("true")
 	defer glog.Flush()
 	r := gin.Default()
 	r.Use(ResponseHeaders())
 	r.GET("/healthz", func(c *gin.Context) {
-		//输出json结果给调用方
 		glog.Infof("Client requests info: ClientIP: %s, RequestCode: %d", c.ClientIP(), http.StatusOK)
 		c.JSON(200, gin.H{
 			"message": "pong",
