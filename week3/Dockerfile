@@ -1,9 +1,8 @@
 FROM golang:1.18.2 AS builder
 
 WORKDIR /build
-RUN adduser -u 10001 -D app-runner
 
-ENV GOPROXY https://goproxy.cn
+ENV GOPROXY https://mirrors.aliyun.com/goproxy/
 COPY go.mod .
 COPY go.sum .
 RUN go mod download
@@ -16,5 +15,4 @@ FROM alpine:3.16.0 AS final
 WORKDIR /app
 COPY --from=builder /build/gin-server /app/
 
-USER app-runner
 ENTRYPOINT ["/app/gin-server"]
