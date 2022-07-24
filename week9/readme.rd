@@ -12,5 +12,9 @@ kubectl apply nginx-ingress-deployment.yaml
 # go-server-pod.yaml进行配置pod, service, ingress组件
 kubectl apply go-server-pod.yaml
 
+
+# 查看当前Ingress访问地址(ingress-nginx-controller)
+kubectl get svc -n ingress-nginx
+
 # 通过curl进行检查
 curl -H "Host: golearn.com" https://10.43.82.48/healthz -k
