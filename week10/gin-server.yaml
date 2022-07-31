@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gin-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gin-server
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+      labels:
+        app: gin-server
+    spec:
+      containers:
+        - name: ginserver
+          image: changsiheng/gin-server:v11
+          ports:
+            - containerPort: 8080
