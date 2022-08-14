@@ -15,4 +15,5 @@ kubectl create -n istio-system secret tls cncamp-credential --key=cncamp.io.key 
 7. 配置访问规则, 规则内容存放在istio-specs.yaml，分别有路由和安全相关的配置
 8. 安装Jaeger通过jaeger.yaml进行
 
-9.Jaeger查看安装结果
+9.Jaeger查看安装结果, 但我的结果不知道为啥没有像老师的示例中，可以很分明的看出每个方法的用时
+![微信图片_20220814234751](https://user-images.githubusercontent.com/16226183/184544765-7a9c99a1-e8c3-4634-84ef-f99cc11ef09b.png)
