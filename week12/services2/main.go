@@ -20,7 +20,7 @@ func main() {
 	r := gin.Default()
 	r.Use(ResponseHeaders())
 	r.GET("/healthz", func(c *gin.Context) {
-		req, err := http.NewRequest("GET", "http://127.0.0.1:8082/healthz", nil)
+		req, err := http.NewRequest("GET", "http://service3/hello", nil)
 		if err != nil {
 			fmt.Printf("%s", err)
 		}

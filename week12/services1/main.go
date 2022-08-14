@@ -20,7 +20,7 @@ func main() {
 	r := gin.Default()
 	r.Use(ResponseHeaders())
 	r.GET("/healthz", func(c *gin.Context) {
-		req, err := http.NewRequest("GET", "http://127.0.0.1:8082/healthz", nil)
+		req, err := http.NewRequest("GET", "http://service2/healthz", nil)
 		if err != nil {
 			fmt.Printf("%s", err)
 		}
@@ -28,7 +28,6 @@ func main() {
 		for k, v := range c.Request.Header {
 			lowerCaseHeader[strings.ToLower((k))] = v
 		}
-		fmt.Printf("%s", lowerCaseHeader)
 		req.Header = lowerCaseHeader
 		client := &http.Client{}
 		resp, err := client.Do(req)
