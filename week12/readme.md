@@ -1,6 +1,6 @@
 本周完成内容：
 
-1. 修改http-server为 services1, services2, services3
+1. 修改http-server为 services1, services2, services3， 在dockerHub中的changsiheng/gin-server-8081:v1, gin-server-8082:v1, gin-server-8083:v1
 2. 代码中的Mesh链路为services1 --> services2 --> services3
 3. serviceMesh文件中gin-server-deployment和gin-server-services是部署使用的deployment和services
 4. 生成TLS使用证书
