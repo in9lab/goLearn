@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gin-server-8081
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gin-server-8081
+  template:
+    metadata:
+      labels:
+        app: gin-server-8081
+    spec:
+      containers:
+        - name: ginserver
+          image: changsiheng/gin-server-8081:v1
+          ports:
+            - containerPort: 8081
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gin-server-8082
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gin-server-8082
+  template:
+    metadata:
+      labels:
+        app: gin-server-8082
+    spec:
+      containers:
+        - name: ginserver
+          image: changsiheng/gin-server-8082:v1
+          ports:
+            - containerPort: 8082
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gin-server-8083
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gin-server-8083
+  template:
+    metadata:
+      labels:
+        app: gin-server-8083
+    spec:
+      containers:
+        - name: ginserver
+          image: changsiheng/gin-server-8083:v1
+          ports:
+            - containerPort: 8083
