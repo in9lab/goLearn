@@ -18,5 +18,5 @@ kubectl create -n istio-system secret tls cncamp-credential --key=cncamp.io.key 
 10. curl测试链路响应
 for i in {1..1000}; do curl --resolve httpsserver.cncamp.io:443:10.43.55.73 https://httpsserver.cncamp.io/healthz -k; done;
 
-12.Jaeger查看安装结果, 但我的结果不知道为啥没有像老师的示例中，可以很分明的看出每个方法的用时
+11.Jaeger查看安装结果, 但我的结果不知道为啥没有像老师的示例中，可以很分明的看出每个方法的用时
 ![微信图片_20220814234751](https://user-images.githubusercontent.com/16226183/184544765-7a9c99a1-e8c3-4634-84ef-f99cc11ef09b.png)
